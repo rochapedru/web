@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificador de Paridade</title>
+</head>
+<body>
+    <input type="number" id="numero" placeholder="Digite um número inteiro">
+    <button onclick="verificarParidade()">Calcular</button>
+
+    <script>
+        function verificarParidade() {
+            var numero = document.getElementById('numero').value;
+            if (numero % 2 == 0) {
+                alert("O número " + numero + " é par.");
+            } else {
+                alert("O número " + numero + " é ímpar.");
+            }
+        }
+    </script>
+</body>
+</html>

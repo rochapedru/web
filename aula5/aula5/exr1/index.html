@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Parcelas</title>
+</head>
+<body>
+    <label for="valorTotal">Valor total da compra:</label><br>
+    <input type="number" id="valorTotal" name="valorTotal"><br>
+    <label for="quantidadeParcelas">Quantidade de parcelas:</label><br>
+    <input type="number" id="quantidadeParcelas" name="quantidadeParcelas"><br>
+    <button onclick="calcularParcelas()">Calcular</button>
+
+    <table>
+        <tr>
+            <th>Quantidade de Parcelas</th>
+            <th>% de Juros</th>
+            <th>Valor das Parcelas</th>
+        </tr>
+        <tr>
+            <td id="parcela1">1</td>
+            <td id="juros1">0%</td>
+            <td id="valor1"></td>
+        </tr>
+        <tr>
+            <td id="parcela2">2</td>
+            <td id="juros2">3%</td>
+            <td id="valor2"></td>
+        </tr>
+        <tr>
+            <td id="parcela3">4</td>
+            <td id="juros3">7%</td>
+            <td id="valor3"></td>
+        </tr>
+    </table>
+
+    <label for="resultado">Resultado:</label><br>
+    <input type="text" id="resultado" name="resultado" readonly><br>
+
+    <script>
+        function calcularParcelas() {
+            var valorTotal = document.getElementById('valorTotal').value;
+            var quantidadeParcelas = document.getElementById('quantidadeParcelas').value;
+            var juros = [0, 0.03, 0.07];
+            var parcelas = [1, 2, 4];
+
+            for (var i = 0; i < 3; i++) {
+                if (quantidadeParcelas == parcelas[i]) {
+                    var valorParcelas = valorTotal * (1 + juros[i]) / quantidadeParcelas;
+                    document.getElementById('valor' + (i + 1)).innerHTML = valorParcelas.toFixed(2);
+                    document.getElementById('resultado').value = (valorParcelas * quantidadeParcelas).toFixed(2);
+                } else {
+                    document.getElementById('valor' + (i + 1)).innerHTML = '';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

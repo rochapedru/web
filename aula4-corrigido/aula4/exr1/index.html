@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contador e Timer</title>
+</head>
+<body>
+    <button id="botao1">Botão 1</button>
+    <button id="botao2">Botão 2</button>
+    <button id="botao3">Botão 3</button>
+    <button id="botao4">Botão 4</button>
+
+    <p class="cl1">Parágrafo 1 da classe cl1</p>
+    <p class="cl1">Parágrafo 2 da classe cl1</p>
+    <p class="cl2">Parágrafo 1 da classe cl2</p>
+    <p class="cl2">Parágrafo 2 da classe cl2</p>
+
+    <script>
+        var contador;
+        var timer;
+
+        document.getElementById('botao1').addEventListener('click', function() {
+            clearInterval(contador);
+            var count = 0;
+            contador = setInterval(function() {
+                count++;
+                document.getElementById('botao2').textContent = count;
+            }, 500);
+        });
+
+        document.getElementById('botao2').addEventListener('click', function() {
+            clearInterval(contador);
+        });
+
+        document.getElementById('botao3').addEventListener('click', function() {
+            var tempo = document.getElementById('botao2').textContent;
+            clearTimeout(timer);
+            timer = setTimeout(function() {
+                alert("Acabou seu tempo!");
+            }, tempo * 500);
+        });
+    </script>
+</body>
+</html>

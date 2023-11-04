@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo de Página</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="iniciarCriacao()">Iniciar Criação</button>
+
+    <table id="tabela">
+        <tr>
+            <th>Milissegundos</th>
+            <th>Valor Aleatório</th>
+        </tr>
+    </table>
+
+    <script>
+        function iniciarCriacao() {
+            var numero = document.getElementById('numero').value;
+            var tabela = document.getElementById('tabela');
+            for (var i = 0; i < numero; i++) {
+                var linha = tabela.insertRow(-1);
+                var celula1 = linha.insertCell(0);
+                var celula2 = linha.insertCell(1);
+                celula1.innerHTML = Date.now();
+                celula2.innerHTML = Math.random().toFixed(5);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Média</title>
+</head>
+<body>
+    <input type="number" id="nota1" placeholder="Digite a primeira nota">
+    <input type="number" id="nota2" placeholder="Digite a segunda nota">
+    <input type="number" id="nota3" placeholder="Digite a terceira nota">
+    <button onclick="calcularMedia()">Calcular</button>
+
+    <table>
+        <tr>
+            <th>Média</th>
+            <th>Conceito</th>
+        </tr>
+        <tr>
+            <td>≥ 6</td>
+            <td>Aprovado</td>
+        </tr>
+        <tr>
+            <td>≥ 3 e < 6</td>
+            <td>Exame</td>
+        </tr>
+        <tr>
+            <td>< 3</td>
+            <td>Reprovado</td>
+        </tr>
+    </table>
+
+    <label for="media">Média:</label><br>
+    <input type="text" id="media" name="media" readonly><br>
+    <label for="conceito">Conceito:</label><br>
+    <input type="text" id="conceito" name="conceito" readonly><br>
+
+    <script>
+        function calcularMedia() {
+            var nota1 = document.getElementById('nota1').value;
+            var nota2 = document.getElementById('nota2').value;
+            var nota3 = document.getElementById('nota3').value;
+            var media = (parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3)) / 3;
+            document.getElementById('media').value = media.toFixed(2);
+
+            var conceito;
+            if (media >= 6) {
+                conceito = 'Aprovado';
+            } else if (media >= 3) {
+                conceito = 'Exame';
+            } else {
+                conceito = 'Reprovado';
+            }
+            document.getElementById('conceito').value = conceito;
+        }
+    </script>
+</body>
+</html>

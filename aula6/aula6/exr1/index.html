@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário</title>
+</head>
+<body>
+    <form>
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome"><br>
+        <label for="sobrenome">Sobrenome:</label><br>
+        <input type="text" id="sobrenome" name="sobrenome"><br>
+        <button type="button" id="botao1" onclick="mostrarAlerta()">Botão 1</button>
+        <button type="button" id="botao2" onclick="iniciarFlip()">Botão 2</button>
+    </form>
+
+    <script>
+        function mostrarAlerta() {
+            var nome = document.getElementById('nome').value;
+            var sobrenome = document.getElementById('sobrenome').value;
+            alert("Nome: " + nome + ", Sobrenome: " + sobrenome);
+            console.log("Nome: " + nome + ", Sobrenome: " + sobrenome);
+        }
+
+        function iniciarFlip() {
+            setInterval(flip, 2000);
+        }
+
+        function flip() {
+            var nome = document.getElementById('nome');
+            var sobrenome = document.getElementById('sobrenome');
+            var temp = nome.value;
+            nome.value = sobrenome.value;
+            sobrenome.value = temp;
+        }
+    </script>
+</body>
+</html>

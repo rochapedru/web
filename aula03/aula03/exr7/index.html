@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Calculadora de Idade</h2>
+
+<p>Nome:</p>
+<input id="nome">
+
+<p>Ano de Nascimento:</p>
+<input id="anoNascimento">
+
+<p>Ano Atual:</p>
+<input id="anoAtual">
+
+<button onclick="calcularIdade()">Calcular</button>
+
+<p id="resultado"></p>
+
+<script>
+function calcularIdade() {
+  var nome = document.getElementById("nome").value;
+  var anoNascimento = parseInt(document.getElementById("anoNascimento").value);
+  var anoAtual = parseInt(document.getElementById("anoAtual").value);
+  var idade = anoAtual - anoNascimento;
+  document.getElementById("resultado").innerHTML = "Nome: " + nome + "<br>Idade: " + idade;
+}
+</script>
+
+</body>
+</html>

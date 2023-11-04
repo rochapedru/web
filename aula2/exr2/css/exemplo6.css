@@ -1,0 +1,32 @@
+p{
+    width: 500px;
+    height: 150px;
+}
+
+
+/* seletor individual */
+
+#p1{
+    color: green;
+
+}
+
+#p2{
+    color: blue;
+
+}
+
+/* CLASSE GENERICA */
+
+.border{
+    border: 5px solid #000;
+}
+
+.sombra{
+    box-shadow:5px 5px 10px #f00;
+}
+
+.borda2{
+    border-top: 3px solid #000;
+    
+}

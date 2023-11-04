@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comparador de Números</title>
+</head>
+<body>
+    <input type="number" id="numero1" placeholder="Digite o primeiro número">
+    <input type="number" id="numero2" placeholder="Digite o segundo número">
+    <button onclick="compararNumeros()">Calcular</button>
+
+    <script>
+        function compararNumeros() {
+            var numero1 = document.getElementById('numero1').value;
+            var numero2 = document.getElementById('numero2').value;
+            if (numero1 > numero2) {
+                alert("O número " + numero1 + " é maior que " + numero2 + ".");
+            } else if (numero1 < numero2) {
+                alert("O número " + numero2 + " é maior que " + numero1 + ".");
+            } else {
+                alert("Os números " + numero1 + " e " + numero2 + " são iguais.");
+            }
+        }
+    </script>
+</body>
+</html>
